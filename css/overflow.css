@@ -1,0 +1,124 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{ 
+    width:1792px;
+    /*height: 750px;*/
+    height: 100vh;
+    margin: 0px auto 0;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.container img{ 
+    width: 1792px;  
+    display:block;
+    position: absolute;
+    top:  0px;
+    left: 0px;
+    z-index: -1;
+    /*filter: opacity(50%);*/
+    /*filter: grayscale(90%);*/
+    filter: hue-rotate(180deg);
+}
+
+.lente img{
+    position: absolute;
+    top: -50px;            /* Dimenciones inicial del lente */
+    left: -50px;
+    z-index: 1;
+    filter: opacity(99%); 
+    /*Descomentar*/
+    /*animation: refImg 4s forwards linear;*/
+}
+
+.lente{
+    background-color: rgba(202, 243, 251, 0.35);
+    border: 2px solid rgb(54, 3, 195);
+    border-radius: 50%;
+
+    width:  50px;           /* Dimenciones inicial del lente */
+    height: 50px;
+
+    position: relative;
+    top: 290px;              /* posicion inicial del lente */
+    left: 870px;
+    z-index: 0;
+    overflow: hidden;
+
+    /*Descomentar*/
+    /*animation: expandLente 4s forwards linear;*/
+}
+
+@keyframes expandLente {
+    0%{
+        width: 50px;        /* Dimenciones inicial del lente */
+        height: 50px ; 
+
+        top: 290px;          /* posicion inicial del lente */
+        left: 870px;
+    }
+    100%{
+        width: 1900px;
+        height: 1900px;
+
+        top: -420px;     /* posicion final del lente */
+        left: -150px;
+    }
+    
+}
+
+
+@keyframes refImg {
+    0%{ 
+        top: -290px;       /* posicion inicial de imagen de fondo en referencia al la del lente */
+        left: -870px;
+
+    }
+    100%{ 
+        top: 420px;    /* posicion final del lente */
+        left: 150px;
+    }   
+}
+
+
+
+nav{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+li{
+    width: 210px;
+    height: 210px;
+    background-color: rgba(221, 178, 4, 0.848);
+    background-image: linear-gradient(rgb(240, 3, 3) rgb(244, 247, 58));
+    border-radius: 50%;
+    /*filter: hue-rotate(0deg);*/
+    opacity: 20px;
+}
+
+
+
+li.posUno{
+    width: 210px;
+    height: 210px;
+    position: absolute;
+    top: 46px;
+    left: 250px;
+}
+
+
+
+h1{
+    color: aliceblue;
+    font-weight: 900px;
+    position: absolute;
+    top: 700px;
+    left: 900px;
+}
