@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* para incluir los bordes en los tamanos de los contenedores */
 }
 
 
@@ -23,8 +23,7 @@ div.cuerpo{
     padding-bottom: 60px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    /*border: 2px solid goldenrod;*/
+    align-items: center; 
 }
 
 
@@ -35,7 +34,7 @@ header{
     width: 90%;
     padding: 10px 30px;
     display: flex; 
-    flex-direction: row;    /* para mandar el titulo a la derecha y el menu a la izquierda de la fila.*/
+    flex-direction: row;             /* para mandar el titulo a la derecha y el menu a la izquierda de la fila.*/
     justify-content: space-between;
     align-items: center;             /* Alinea vertical, porque el eje principal es 'row' */
     border-bottom: 1.0px solid rgba(35, 35, 35, 0.4); /* border */
@@ -155,10 +154,7 @@ section.intro,section.contact{
     display: flex;
     flex-direction: row;
     align-items: flex-end;         /* Y-axis*/
-    justify-content: center;   /* X-axis*/
-    /*
-    border: 3px dashed greenyellow;
-    */
+    justify-content: center;   /* X-axis*/ 
 
 }
 
@@ -437,10 +433,7 @@ div.imagen-bucle{ /*Gallery*/
     background-position: center right;
     background-size: cover; 
     border: 1px solid rgb(79 79 163);
-    transition: background-image 0.5s linear;
-    /*
-    background-image: url("../img/intro-02.jpeg");
-    */
+    transition: background-image 0.5s linear; 
 }
 
 
@@ -529,7 +522,7 @@ div.grid_2columnas{
     width: 100%;  
     justify-content: center;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* Create 2 equal-width columns */
+    grid-template-columns: repeat(2, 1fr);  /*  2 columnas de igual ancho */
     gap: 20px; 
 }
 
@@ -589,9 +582,7 @@ div.titulo{
     position: relative;
     z-index: 15; 
     border-radius: 20px;
-    background-color: rgba(230, 230, 255, 0.2);
-    /*justify-content: stretch;
-    align-items: start;*/
+    background-color: rgba(230, 230, 255, 0.2); 
 
 }
 
@@ -604,16 +595,10 @@ div.titulo{
 }
 
 .p_contenido li{
-    color: #484849; /* Make the text white for contrast */ 
+    color: #484849; 
 }
 
-
-/*
-div a{
-    display: inline;
-    text-align: center;
-}
-*/
+ 
 div.p_contenido a {  
     align-self: center; 
     background-color: rgb(0 0 0 / 10%); 
@@ -622,10 +607,10 @@ div.p_contenido a {
 
 
 .github-icon {
-    width: 60px;  /* Adjust the width of the logo */
-    height: auto;  /* Keeps the aspect ratio */
-    display: block; /* Prevents inline display issues */
-    transition: transform 0.3s ease; /* Optional: Adds a hover effect */
+    width: 60px;     /* ancho del logo */
+    height: auto;    /* para mantener el alto automatico y que no deforme la imagen */
+    display: block; 
+    transition: transform 0.3s ease; /* hover effect */
 }
 
 /*Para logos del portafolio mas chiquitos.*/
@@ -644,10 +629,10 @@ a:hover .github-icon {
     margin: 15px 20px;
     margin-left: 0;
     padding: 12px;
-    width: 70px;  /* Adjust the width of the logo */
-    height: auto;  /* Keeps the aspect ratio */
-    display: inline; /* Prevents inline display issues */
-    transition: transform 0.3s ease; /* Optional: Adds a hover effect */
+    width: 70px;  
+    height: auto;  
+    display: inline;  
+    transition: transform 0.3s ease; /* hover effect */
     border: 2px solid #007EBB;
     border-radius: 10px;
 }
@@ -658,9 +643,7 @@ a:hover .redes-icon {
 }
 
 
-.portfolio_block {
-    /*width: 80%;*/
-    /*width: 600px;*/
+.portfolio_block { 
     width: auto;
     height: 400px; 
     position: relative;  /* To position the pseudo-element correctly */
@@ -676,14 +659,10 @@ div.portfolio_block{
     margin: 20px 20px 0px 20px;
     padding: 20px;
     display: flex;
-    flex-direction: column;
-    /*border: 2px solid  rgb(239, 218, 218);*/
-
+    flex-direction: column; 
     border-radius: 25px;
-    
     cursor: pointer;
     box-shadow: 1px 1px 2px rgb(0, 0, 0, 0.5);
-
     justify-content: end;
     /*
     align-items: center;
@@ -691,29 +670,29 @@ div.portfolio_block{
     */
 }
 
-/* Add the dark layer using ::before */
+/* Capa sombre los bloques del portfolio usando pseudo-element ::before */
 .portfolio_block::before {
-    content: "";  /* Required for pseudo-elements */
+    content: "";          /* Requerido para pseudo-elements */
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(230, 230, 255, 0.8); /* Dark overlay */
-    z-index: 2;  /* Ensure it is above the background image */
-    opacity: 0.1;  /* Start with no overlay */
-    transition: opacity 0.3s ease;  /* Smooth transition on hover */
+    background-color: rgba(230, 230, 255, 0.8); /* color de la capa */
+    z-index: 2;                                   /* para que este encima de la imagen de fondo */
+    opacity: 0.1;                                 /* Al inicio casi transparente */
+    transition: opacity 0.3s ease;                /* hover: tiempo de la transicion */
 }
 
 
 .portfolio_block:hover::before {
-    opacity: 1;  /* Show the dark overlay on hover */
+    opacity: 1;                                   /* en hover: capa de encima sin opacidad */
 }
 
 
 .portfolio_block:hover {
-    transform: scale(1.05);  /* Zoom effect on hover */
-    z-index: 3;  /* Ensure it remains above other elements during hover */
+    transform: scale(1.05);                       /* agrandar un poquito */
+    z-index: 3;                                   /* Encima de los otros elementos */
 }
 
 
@@ -723,15 +702,15 @@ div.portfolio_block{
     padding: 20px;  
     display: flex;
     flex-direction: column;
-    opacity: 0;   /* Hide text initially */
-    visibility: hidden;  /* Ensure it’s not interactable */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+    opacity: 0;                                  /* Texto oculto al principio */
+    visibility: hidden;                          /* para que no afecte o interactue con nada mas. */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* transicion cuando hace el hover */
 }
 
 /* Show text on hover */
 .portfolio_block:hover .p_contenido {
-    opacity: 1;  /* Fully visible on hover */
-    visibility: visible;  /* Ensure it’s interactable when visible */
+    opacity: 1;                                /* visible en hover */
+    visibility: visible;                       /* visible para que el contenido sea clicable */
 }
 
 
@@ -782,10 +761,7 @@ div.button a{
 
 
 form{
-    width: calc(100% - 40px);
-    /*
-    border: 1px solid  rgb(79 79 163);
-    */
+    width: calc(100% - 40px); 
     border: 1px solid rgb(230 230 230);
     box-shadow: 1px 2px 2px rgb(230 230 230);
     border-radius: 25px;
@@ -956,7 +932,7 @@ input[type="checkbox"]{
             z-index: 100;
         }
     
-        /* Show menu items as block elements */
+        /* espaciado entre los elementos del menu */
         .menu li {
             margin-bottom: 10px;
         }
@@ -965,22 +941,22 @@ input[type="checkbox"]{
             color: white;
         }
     
-        /* Show burger menu on mobile */
+        /* Monstrar burger menu en dispositibo movil */
         .burger-menu {
             display: block;
         }
     
-        /* Toggle the menu display */
+        /* Cambiar la disposicion del menu para que aparezca como bloque */
         .menu.show {
             display: flex;
         }
     
-        /* Burger Icon Animation: Transform to "X" */
+        /* Burger Icon Animation: inclinando las lineas para que formen la "X" de cerrar */
         .burger-menu.toggle span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
         .burger-menu.toggle span:nth-child(2) {
-            opacity: 0; /* Hide the middle line */
+            opacity: 0;                             /* ocultar la linea de en medio. */
         }
         .burger-menu.toggle span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
@@ -1000,13 +976,19 @@ input[type="checkbox"]{
 
     div.grid_2columnas{
         width: 90%;   
-        grid-template-columns: repeat(1, 1fr);  /* Create 1 equal-width columns */
+        grid-template-columns: repeat(1, 1fr);  /*   1  columns */
         gap: 10px; 
     }
 
 
     div.media, div.chica, div.ancha{
         width: 80%; 
+        min-width: 300px;
+    }
+
+    div.columna {
+        margin: 10px 5px;
+        padding: 10px 5px 5px 10px;
     }
  
     div.cuerpo {
@@ -1017,9 +999,7 @@ input[type="checkbox"]{
 
     section.intro {
         padding-top: 80px;
-        /*
-        height: calc(100vh - 80px);
-        */
+        height: auto;  /* para que el alto sea automatico y no corte el contenido */
     }
 
     .hero h1{    font-size: 28px; } 
@@ -1040,8 +1020,8 @@ input[type="checkbox"]{
     }
     footer div.bloque-central {
         border: 0px;
-        border-top: 1px solid rgb(79 79 163);     /*rgb(105 120 149); #007EBB;*/
-        border-bottom: 1px solid rgb(79 79 163);  /*rgb(105 120 149);  #007EBB;*/ 
+        border-top: 1px solid rgb(79 79 163);     
+        border-bottom: 1px solid rgb(79 79 163);   
 
     }
 

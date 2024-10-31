@@ -1,33 +1,35 @@
 
-// JavaScript for switching images
-// Array of images
+// JavaScript 
+
+
+// Funciones para bucle de imagenes.
+// Array 
 const images = [
     "img/img_ska_001.webp",  
     "img/img_ska_002.webp",  
     "img/img_ska_003.webp",  
-    "img/img_ska_004.webp" 
-    //,  "img/img_ska_005.webp"
+    "img/img_ska_004.webp"  
 ];
 
-// Get the div container by ID
+// div container usando ID
 const gallery = document.getElementById('gallery');   
 
-// Initial index for images
+// elemento inicial
 let currentIndex = 0;
 
-// Function to switch images
+// funcion para actualizar las imagenes
 function switchImage() {
-    // Change the background image
+    // background image
     gallery.style.backgroundImage = `url(${images[currentIndex]})`;
 
-    // Update index for next image
-    currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+    // index para la imagen siguiente
+    currentIndex = (currentIndex + 1) % images.length; 
 }
 
-// Set interval to change the image every 3 seconds (3000 milliseconds)
+// tiempo
 setInterval(switchImage, 3000);
 
-// Initial call to display the first image
+// llamada a la funcion para cargar 
 switchImage();
 
 
@@ -58,8 +60,8 @@ contenedores_logos.forEach(
 function toggleMenu() {
     const menu = document.querySelector('.menu');
     const burger = document.querySelector('.burger-menu');
-    menu.classList.toggle('show'); // Toggle the 'show' class for the menu
-    burger.classList.toggle('toggle'); // Toggle the 'toggle' class for the burger icon
+    menu.classList.toggle('show');            // Toggle la clase 'show' para el bloque menu
+    burger.classList.toggle('toggle');        // Toggle la clase 'toggle' para el boton icono de hambuerguesa.
   }
   
 
